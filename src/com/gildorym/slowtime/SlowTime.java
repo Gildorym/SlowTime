@@ -9,10 +9,14 @@ public class SlowTime extends JavaPlugin {
 
 			@Override
 			public void run() {
-				SlowTime.this.getServer().getWorlds().get(0).setFullTime((long) (SlowTime.this.getServer().getWorlds().get(0).getFullTime() - 100L + (100L * 0.25D)));
+				// -67L is equal to -72L + 72L * (5D/72D)
+				// Regular Minecraft speed is 1 MC Day / 20 IRL min
+				// This plugin sets time equal to 5/72 of Regular Minecraft Speed
+				// Modified Minecraft speed becomes 5 MC Days / 1440 IRL min (1 IRL Day)
+				SlowTime.this.getServer().getWorlds().get(0).setFullTime((long) (SlowTime.this.getServer().getWorlds().get(0).getFullTime() - 67L));
 			}
 			
-		}, 100L, 100L);
+		}, 72L, 72L);
 	}
 
 }
