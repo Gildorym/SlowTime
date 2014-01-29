@@ -6,6 +6,8 @@ public class SlowTime extends JavaPlugin {
 	
 	public void onEnable() {
 		 
+		 //TODO: If possible, add broadcast messages and the ability to see the date.
+		 
 		//Every 15 minutes, the server will synchronize the time of day with the calendar
 		this.getServer().getScheduler().scheduleSyncRepeatingTask(this, new Runnable() {
 		 
